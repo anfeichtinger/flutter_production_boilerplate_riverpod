@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ionicons/ionicons.dart';
 
-import '../../states/theme_provider.dart';
 import '../widgets/first_screen/info_card.dart';
+import '../widgets/first_screen/theme_card.dart';
 import '../widgets/header.dart';
 
 class FirstScreen extends ConsumerWidget {
@@ -19,48 +19,7 @@ class FirstScreen extends ConsumerWidget {
           physics: const BouncingScrollPhysics(),
           children: <Widget>[
             const Header(text: 'app_name'),
-            Card(
-              elevation: 2,
-              color: Theme.of(context).cardColor,
 
-              /// Example: Getting border radius circular as const
-              /// Nested Widgets do not need to be declared as const.
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(12))),
-              child: SwitchListTile(
-                onChanged: (bool newValue) {
-                  /// Example: Change theme with Riverpod
-                  if (newValue) {
-                    ref.watch(themeProvider).enableDarkMode();
-                  } else {
-                    ref.watch(themeProvider).enableLightMode();
-                  }
-                },
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(12))),
-                value: Theme.of(context).brightness == Brightness.dark,
-                title: Row(
-                  children: <Widget>[
-                    /// Examle: Ionicons
-                    /// Available icons -> https://ionic.io/ionicons
-                    Icon(Ionicons.moon_outline,
-                        color: Theme.of(context).primaryColor),
-                    const SizedBox(width: 16),
-                    Text(
-                      /// Example: Use the easy_translations package
-                      tr('dark_mode_title'),
-                      style: Theme.of(context)
-                          .textTheme
-                          .subtitle1!
-                          .apply(fontWeightDelta: 2),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            /// Example: Good way to add space between items without using Paddings
-            const SizedBox(height: 8),
             Card(
               elevation: 2,
 
@@ -96,7 +55,39 @@ class FirstScreen extends ConsumerWidget {
                 ),
               ),
             ),
+
             const SizedBox(height: 8),
+
+            GridView.count(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                crossAxisCount: 3,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                childAspectRatio: 1.75 / 1,
+                children: const <ThemeCard>[
+                  ThemeCard(
+                    mode: ThemeMode.system,
+                    icon: Ionicons.contrast_outline,
+                  ),
+                  ThemeCard(
+                    mode: ThemeMode.light,
+                    icon: Ionicons.sunny_outline,
+                  ),
+                  ThemeCard(
+                    mode: ThemeMode.dark,
+                    icon: Ionicons.moon_outline,
+                  ),
+                ]),
+
+            /// Example: Good way to add space between items without using Paddings
+            const SizedBox(height: 8),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24),
+              child: Divider(),
+            ),
+            const SizedBox(height: 8),
+
             GridView.count(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,

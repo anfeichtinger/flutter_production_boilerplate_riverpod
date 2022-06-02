@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'theme_state.dart';
+import 'theme_mode_state.dart';
 
-final AutoDisposeChangeNotifierProvider<ChangeThemeState> themeProvider =
+final AutoDisposeChangeNotifierProvider<ThemeModeState> themeProvider =
     ChangeNotifierProvider.autoDispose(
-        (AutoDisposeChangeNotifierProviderRef<ChangeThemeState> ref) {
-  return ChangeThemeState();
+        (AutoDisposeChangeNotifierProviderRef<ThemeModeState> ref) {
+  return ThemeModeState();
 });

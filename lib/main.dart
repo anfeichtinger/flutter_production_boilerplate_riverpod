@@ -8,8 +8,8 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'config/theme.dart';
+import 'states/theme_mode_state.dart';
 import 'states/theme_provider.dart';
-import 'states/theme_state.dart';
 import 'ui/screens/skeleton_screen.dart';
 
 /// Try using const constructors as much as possible!
@@ -46,7 +46,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ChangeThemeState currentTheme = ref.watch(themeProvider);
+    final ThemeModeState currentTheme = ref.watch(themeProvider);
 
     return MaterialApp(
       /// Localization is not available for the title.
@@ -55,7 +55,7 @@ class MyApp extends ConsumerWidget {
       /// Theme stuff
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: currentTheme.darkMode ? ThemeMode.dark : ThemeMode.light,
+      themeMode: currentTheme.themeMode,
 
       /// Localization stuff
       localizationsDelegates: context.localizationDelegates,

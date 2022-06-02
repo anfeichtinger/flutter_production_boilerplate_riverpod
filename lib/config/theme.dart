@@ -112,14 +112,10 @@ final ThemeData lightTheme = ThemeData(
 
 final ThemeData darkTheme = lightTheme.copyWith(
   brightness: Brightness.dark,
-  scaffoldBackgroundColor: const Color(0xFF18181B),
-  // zinc-900
-  backgroundColor: const Color(0xFF18181B),
-  // zinc-900
-  cardColor: const Color(0xFF262626),
-  // neutral-800
-  bottomAppBarColor: const Color(0xFF27272A),
-  // zinc-800
+  scaffoldBackgroundColor: const Color(0xFF18181B),  // zinc-900
+  backgroundColor: const Color(0xFF18181B),  // zinc-900
+  cardColor: const Color(0xFF262626),  // neutral-800
+  bottomAppBarColor: const Color(0xFF27272A),  // zinc-800
   dividerColor: const Color(0x1CFFFFFF),
   textTheme: TextTheme(
     headline1: TextStyle(

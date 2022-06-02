@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
-
   const Header({super.key, required this.text});
+
   final String text;
 
   @override
@@ -13,8 +13,7 @@ class Header extends StatelessWidget {
       child: Text(
         tr(text),
         textAlign: TextAlign.start,
-        style:
-            Theme.of(context).textTheme.headline4!.apply(fontWeightDelta: 2),
+        style: Theme.of(context).textTheme.headline4!.apply(fontWeightDelta: 2),
       ),
     );
   }
