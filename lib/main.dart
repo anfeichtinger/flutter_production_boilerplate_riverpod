@@ -8,9 +8,9 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'config/theme.dart';
+import 'states/theme_provider.dart';
+import 'states/theme_state.dart';
 import 'ui/screens/skeleton_screen.dart';
-import 'ui/states/theme_provider.dart';
-import 'ui/states/theme_state.dart';
 
 /// Try using const constructors as much as possible!
 

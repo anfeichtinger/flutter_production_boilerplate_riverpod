@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ionicons/ionicons.dart';
 
-import '../states/widgets/bottom_nav_bar/bottom_nav_bar_provider.dart';
+import '../../states/widgets/bottom_nav_bar/bottom_nav_bar_provider.dart';
 
 class BottomNavBar extends ConsumerWidget {
   const BottomNavBar({super.key});

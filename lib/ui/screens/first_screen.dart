@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ionicons/ionicons.dart';
 
-import '../states/theme_provider.dart';
+import '../../states/theme_provider.dart';
 import '../widgets/first_screen/info_card.dart';
 import '../widgets/header.dart';
 
@@ -17,7 +17,7 @@ class FirstScreen extends ConsumerWidget {
       child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           physics: const BouncingScrollPhysics(),
-          children:  <Widget>[
+          children: <Widget>[
             const Header(text: 'app_name'),
             Card(
               elevation: 2,
