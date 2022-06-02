@@ -4,13 +4,12 @@ import 'package:ionicons/ionicons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LinkCard extends StatelessWidget {
+  const LinkCard(
+      {super.key, required this.title, required this.icon, required this.url});
+
   final String title;
   final IconData icon;
   final Uri url;
-
-  const LinkCard(
-      {Key? key, required this.title, required this.icon, required this.url})
-      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +17,15 @@ class LinkCard extends StatelessWidget {
       elevation: 2,
       color: Theme.of(context).cardColor,
       shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8))),
+          borderRadius: BorderRadius.all(Radius.circular(12))),
       child: ListTile(
         onTap: _launchUrl,
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8))),
+            borderRadius: BorderRadius.all(Radius.circular(12))),
         trailing: Icon(Ionicons.open_outline,
             color: Theme.of(context).textTheme.bodyText2!.color),
         title: Row(
-          children: [
+          children: <Widget>[
             Icon(icon, color: Theme.of(context).primaryColor),
             const SizedBox(width: 16),
             Text(
@@ -43,7 +42,7 @@ class LinkCard extends StatelessWidget {
   }
 
   /// Example: Use the url_launcher package to open the browser
-  void _launchUrl() async => await canLaunchUrl(url)
+  Future<bool> _launchUrl() async => await canLaunchUrl(url)
       ? await launchUrl(url)
-      : throw 'Could not launch $url';
+      : throw Exception('Could not launch $url');
 }

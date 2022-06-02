@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AppBarGone extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarGone({Key? key}): super(key: key);
+  const AppBarGone({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final brightness = Theme.of(context).brightness;
+    final Brightness brightness = Theme.of(context).brightness;
 
     /// This is a reliable way to change the statusbar icons and color
     return AppBar(

@@ -1,31 +1,30 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/states/bottom_navigation/provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ionicons/ionicons.dart';
 
+import '../states/widgets/bottom_nav_bar/bottom_nav_bar_provider.dart';
+
 class BottomNavBar extends ConsumerWidget {
-  /// It is okay not to use a const constructor here.
-  /// Using const breaks updating of selected BottomNavigationBarItem.
-  const BottomNavBar({Key? key}) : super(key: key);
+  const BottomNavBar({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final navIndex = ref.watch(bottomNavProvider) as int;
+    final int? navIndex = ref.watch(bottomNavProvider) as int?;
 
     return Card(
-      margin: const EdgeInsets.only(top: 2, right: 8, left: 8),
+      margin: const EdgeInsets.only(top: 2, right: 4, left: 4),
       elevation: 4,
       color: Theme.of(context).bottomAppBarColor,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(12),
-          topRight: Radius.circular(12),
+          topLeft: Radius.circular(16),
+          topRight: Radius.circular(16),
         ),
       ),
       child: BottomNavigationBar(
-        currentIndex: navIndex,
-        onTap: (index) {
+        currentIndex: navIndex ?? 0,
+        onTap: (int index) {
           ref.read(bottomNavProvider.notifier).setAndPersistValue(index);
         },
         type: BottomNavigationBarType.fixed,
@@ -33,7 +32,7 @@ class BottomNavBar extends ConsumerWidget {
         backgroundColor: Colors.transparent,
         selectedItemColor: Theme.of(context).primaryColor,
         unselectedItemColor: Theme.of(context).textTheme.bodyText1!.color,
-        items: [
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: const Icon(Ionicons.home_outline),
             label: tr('bottom_nav_first'),

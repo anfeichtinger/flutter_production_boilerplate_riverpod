@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/widgets/header.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/widgets/second_screen/grid_item.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/widgets/second_screen/link_card.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/widgets/second_screen/text_divider.dart';
 import 'package:ionicons/ionicons.dart';
 
+import '../widgets/header.dart';
+import '../widgets/second_screen/grid_item.dart';
+import '../widgets/second_screen/link_card.dart';
+import '../widgets/second_screen/text_divider.dart';
+
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+  const SecondScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,22 +16,22 @@ class SecondScreen extends StatelessWidget {
       child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           physics: const BouncingScrollPhysics(),
-          children: [
+          children: <Widget>[
             const Header(text: 'bottom_nav_second'),
             LinkCard(
                 title: 'github_card_title',
                 icon: Ionicons.logo_github,
                 url: Uri.parse(
-                    'https://github.com/anfeichtinger/flutter_production_boilerplate')),
+                    'https://github.com/anfeichtinger/flutter_production_boilerplate_riverpod')),
             const TextDivider(text: 'author_divider_title'),
             GridView.count(
               physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
-              childAspectRatio: 2 / 1,
+              childAspectRatio: 2 / 1.15,
               crossAxisSpacing: 8,
               mainAxisSpacing: 8,
               shrinkWrap: true,
-              children: [
+              children: <GridItem>[
                 GridItem(
                   title: 'instagram_card_title',
                   icon: Ionicons.logo_instagram,
@@ -58,11 +59,11 @@ class SecondScreen extends StatelessWidget {
             GridView.count(
               physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
-              childAspectRatio: 2 / 1,
+              childAspectRatio: 2 / 1.15,
               crossAxisSpacing: 8,
               mainAxisSpacing: 8,
               shrinkWrap: true,
-              children: [
+              children: <GridItem>[
                 GridItem(
                   title: 'flutter_riverpod',
                   icon: Ionicons.water_outline,

@@ -8,7 +8,7 @@
   "localization_content": "Vereinfachte Übersetzungen mit dem Paket Easy Translations.",
 
   "linting_title": "Linting",
-  "linting_content": "Strengere Linting-Regeln mit Flutter Lints, empfohlen von Google.",
+  "linting_content": "Strengere Linting-Regeln mit flutter_lints, empfohlen vonm Dart-Team.",
 
   "storage_title": "Speicher",
   "storage_content": "Extrem schnelle, in reinem Dart geschriebene Datenbank mit Hive.",
@@ -20,7 +20,7 @@
   "state_content": "Leistungsstarkes State-Management mit Riverpod.",
 
   "display_title": "Display",
-  "display_content": "Unterstützt Displays mit hoher Bildwiederholrate durch flutter_isplaymode.",
+  "display_content": "Unterstützt Displays mit hoher Bildwiederholrate durch flutter_displaymode.",
 
   "language_switch_title": "Deutsch verwenden",
 

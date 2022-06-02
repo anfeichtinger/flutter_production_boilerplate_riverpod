@@ -3,12 +3,14 @@ import 'dart:io';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
-import 'package:flutter_production_boilerplate_riverpod/config/theme.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/screens/skeleton_screen.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/states/theme/provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:path_provider/path_provider.dart';
+
+import 'config/theme.dart';
+import 'ui/screens/skeleton_screen.dart';
+import 'ui/states/theme_provider.dart';
+import 'ui/states/theme_state.dart';
 
 /// Try using const constructors as much as possible!
 
@@ -19,7 +21,7 @@ void main() async {
   if (Platform.isAndroid) {
     await FlutterDisplayMode.setHighRefreshRate();
   }
-  final tmpDir = await getTemporaryDirectory();
+  final Directory tmpDir = await getTemporaryDirectory();
   await Hive.initFlutter(tmpDir.toString());
   await Hive.openBox('prefs');
 
@@ -27,7 +29,7 @@ void main() async {
     ProviderScope(
       child: EasyLocalization(
         path: 'assets/translations',
-        supportedLocales: const [
+        supportedLocales: const <Locale>[
           Locale('en'),
           Locale('de'),
         ],
@@ -40,19 +42,19 @@ void main() async {
 }
 
 class MyApp extends ConsumerWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentTheme = ref.watch(themeProvider);
+    final ChangeThemeState currentTheme = ref.watch(themeProvider);
 
     return MaterialApp(
       /// Localization is not available for the title.
       title: 'Flutter Production Boilerplate',
 
       /// Theme stuff
-      theme: AppThemes.lightTheme,
-      darkTheme: AppThemes.darkTheme,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       themeMode: currentTheme.darkMode ? ThemeMode.dark : ThemeMode.light,
 
       /// Localization stuff

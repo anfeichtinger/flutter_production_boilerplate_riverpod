@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/screens/first_screen.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/screens/second_screen.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/states/bottom_navigation/provider.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/widgets/app_bar_gone.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/widgets/bottom_nav_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SkeletonScreen extends ConsumerWidget {
-  const SkeletonScreen({Key? key}) : super(key: key);
+import '../states/widgets/bottom_nav_bar/bottom_nav_bar_provider.dart';
+import '../widgets/app_bar_gone.dart';
+import '../widgets/bottom_nav_bar.dart';
+import 'first_screen.dart';
+import 'second_screen.dart';
 
-  final _pageNavigation = const [
-    FirstScreen(),
-    SecondScreen(),
-  ];
+class SkeletonScreen extends ConsumerWidget {
+  const SkeletonScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final navIndex = ref.watch(bottomNavProvider) as int;
+    final int? navIndex = ref.watch(bottomNavProvider) as int?;
+    const List<Widget> pageNavigation = <Widget>[
+      FirstScreen(),
+      SecondScreen(),
+    ];
 
     return Scaffold(
       appBar: const AppBarGone(),
@@ -25,9 +25,8 @@ class SkeletonScreen extends ConsumerWidget {
       /// layout out and the new layout in.
       body: AnimatedSwitcher(
           duration: const Duration(milliseconds: 300),
-          child: _pageNavigation.elementAt(navIndex)),
+          child: pageNavigation.elementAt(navIndex ?? 0)),
 
-      /// Cannot be const, tab status will not update.
       bottomNavigationBar: const BottomNavBar(),
     );
   }

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 class ChangeThemeState extends ChangeNotifier {
-  bool darkMode = Hive.box('prefs').get('darkMode', defaultValue: false);
+  bool darkMode =
+      Hive.box('prefs').get('darkMode', defaultValue: false) as bool;
 
   void enableDarkMode() {
     darkMode = true;

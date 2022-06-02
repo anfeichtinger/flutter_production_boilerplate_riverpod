@@ -1,13 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/states/theme/provider.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/widgets/first_screen/info_card.dart';
-import 'package:flutter_production_boilerplate_riverpod/ui/widgets/header.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ionicons/ionicons.dart';
 
+import '../states/theme_provider.dart';
+import '../widgets/first_screen/info_card.dart';
+import '../widgets/header.dart';
+
 class FirstScreen extends ConsumerWidget {
-  const FirstScreen({Key? key}) : super(key: key);
+  const FirstScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -16,7 +17,7 @@ class FirstScreen extends ConsumerWidget {
       child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           physics: const BouncingScrollPhysics(),
-          children: [
+          children:  <Widget>[
             const Header(text: 'app_name'),
             Card(
               elevation: 2,
@@ -25,7 +26,7 @@ class FirstScreen extends ConsumerWidget {
               /// Example: Getting border radius circular as const
               /// Nested Widgets do not need to be declared as const.
               shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
+                  borderRadius: BorderRadius.all(Radius.circular(12))),
               child: SwitchListTile(
                 onChanged: (bool newValue) {
                   /// Example: Change theme with Riverpod
@@ -36,10 +37,10 @@ class FirstScreen extends ConsumerWidget {
                   }
                 },
                 shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(8))),
+                    borderRadius: BorderRadius.all(Radius.circular(12))),
                 value: Theme.of(context).brightness == Brightness.dark,
                 title: Row(
-                  children: [
+                  children: <Widget>[
                     /// Examle: Ionicons
                     /// Available icons -> https://ionic.io/ionicons
                     Icon(Ionicons.moon_outline,
@@ -58,7 +59,7 @@ class FirstScreen extends ConsumerWidget {
               ),
             ),
 
-            /// Example: Good way to add space between items
+            /// Example: Good way to add space between items without using Paddings
             const SizedBox(height: 8),
             Card(
               elevation: 2,
@@ -67,7 +68,7 @@ class FirstScreen extends ConsumerWidget {
               /// You can overwrite them in [config/theme.dart].
               color: Theme.of(context).cardColor,
               shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
+                  borderRadius: BorderRadius.all(Radius.circular(12))),
               child: SwitchListTile(
                 onChanged: (bool newValue) {
                   /// Example: Change locale
@@ -77,10 +78,10 @@ class FirstScreen extends ConsumerWidget {
                       newValue ? const Locale('de') : const Locale('en'));
                 },
                 shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(8))),
+                    borderRadius: BorderRadius.all(Radius.circular(12))),
                 value: context.locale == const Locale('de'),
                 title: Row(
-                  children: [
+                  children: <Widget>[
                     Icon(Ionicons.text_outline,
                         color: Theme.of(context).primaryColor),
                     const SizedBox(width: 16),
@@ -102,8 +103,8 @@ class FirstScreen extends ConsumerWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 8,
               mainAxisSpacing: 8,
-              childAspectRatio: 4 / 5,
-              children: const [
+              childAspectRatio: 4 / 5.5,
+              children: const <InfoCard>[
                 /// Example: it is good practice to put widgets in separate files.
                 /// This way the screen files won't become too large and
                 /// the code becomes more clear.

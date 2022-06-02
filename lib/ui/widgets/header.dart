@@ -2,9 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
-  final String text;
 
-  const Header({Key? key, required this.text}) : super(key: key);
+  const Header({super.key, required this.text});
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Header extends StatelessWidget {
         tr(text),
         textAlign: TextAlign.start,
         style:
-            Theme.of(context).textTheme.headline4!.apply(fontFamily: 'Poppins'),
+            Theme.of(context).textTheme.headline4!.apply(fontWeightDelta: 2),
       ),
     );
   }

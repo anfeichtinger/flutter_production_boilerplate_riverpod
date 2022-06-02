@@ -8,7 +8,7 @@
   "localization_content": "Simplified translations with the Easy Translations package.",
 
   "linting_title": "Linting",
-  "linting_content": "Stricter linting rules with flutter lints recommended by the Dart team.",
+  "linting_content": "Stricter linting rules with flutter_lints. Recommended by the Dart team.",
 
   "storage_title": "Storage",
   "storage_content": "Blazing fast key-value database written in pure Dart with Hive.",

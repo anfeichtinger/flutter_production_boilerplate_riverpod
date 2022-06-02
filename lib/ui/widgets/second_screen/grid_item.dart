@@ -3,19 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class GridItem extends StatelessWidget {
+  /// Named parameters are preferred, they make the code easier to understand.
+  const GridItem(
+      {super.key,
+      required this.title,
+      required this.icon,
+      required this.url,
+      this.version});
+
   final String title;
   final IconData icon;
   final Uri url;
   final String? version;
-
-  /// Named parameters are preferred, they make the code easier to understand.
-  const GridItem(
-      {Key? key,
-      required this.title,
-      required this.icon,
-      required this.url,
-      this.version})
-      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +22,14 @@ class GridItem extends StatelessWidget {
       elevation: 2,
       color: Theme.of(context).cardColor,
       shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8))),
+          borderRadius: BorderRadius.all(Radius.circular(12))),
       child: ListTile(
         onTap: _launchUrl,
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8))),
+            borderRadius: BorderRadius.all(Radius.circular(12))),
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+          children: <Widget>[
             Icon(icon, color: Theme.of(context).primaryColor),
             Text(
               tr(title),
@@ -40,15 +39,16 @@ class GridItem extends StatelessWidget {
                   .subtitle1!
                   .apply(fontWeightDelta: 2),
             ),
-            version != null
-                ? Padding(
-                    padding: const EdgeInsets.only(bottom: 6),
-                    child: Text(
-                      version!,
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                  )
-                : const SizedBox()
+            if (version != null)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Text(
+                  version!,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              )
+            else
+              const SizedBox(),
           ],
         ),
       ),
@@ -56,7 +56,7 @@ class GridItem extends StatelessWidget {
   }
 
   /// Example: Use the url_launcher package to open the browser
-  void _launchUrl() async => await canLaunchUrl(url)
+  Future<bool> _launchUrl() async => await canLaunchUrl(url)
       ? await launchUrl(url)
-      : throw 'Could not launch $url';
+      : throw Exception('Could not launch $url');
 }
