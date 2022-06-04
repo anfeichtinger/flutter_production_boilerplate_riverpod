@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
+
+final AutoDisposeChangeNotifierProvider<ThemeModeState> themeProvider =
+    ChangeNotifierProvider.autoDispose(
+        (AutoDisposeChangeNotifierProviderRef<ThemeModeState> ref) {
+  return ThemeModeState();
+});
 
 class ThemeModeState extends ChangeNotifier {
   ThemeModeState() {

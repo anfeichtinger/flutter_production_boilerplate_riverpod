@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../states/widgets/bottom_nav_bar/bottom_nav_bar_provider.dart';
+import '../../states/widgets/bottom_nav_bar/bottom_nav_bar_state.dart';
 import '../widgets/app_bar_gone.dart';
 import '../widgets/bottom_nav_bar.dart';
 import 'first_screen.dart';

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../states/theme_mode_state.dart';
-import '../../../states/theme_provider.dart';
 
 class ThemeCard extends ConsumerWidget {
   const ThemeCard({
