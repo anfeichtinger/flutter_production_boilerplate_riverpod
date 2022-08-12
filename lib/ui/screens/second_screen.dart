@@ -12,7 +12,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Theme.of(context).backgroundColor,
+      color: Theme.of(context).colorScheme.background,
       child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           physics: const BouncingScrollPhysics(),
@@ -31,6 +31,7 @@ class SecondScreen extends StatelessWidget {
               crossAxisSpacing: 8,
               mainAxisSpacing: 8,
               shrinkWrap: true,
+              padding: EdgeInsets.zero,
               children: <GridItem>[
                 GridItem(
                   title: 'instagram_card_title',
@@ -63,6 +64,7 @@ class SecondScreen extends StatelessWidget {
               crossAxisSpacing: 8,
               mainAxisSpacing: 8,
               shrinkWrap: true,
+              padding: EdgeInsets.zero,
               children: <GridItem>[
                 GridItem(
                   title: 'flutter_riverpod',

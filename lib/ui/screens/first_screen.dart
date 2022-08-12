@@ -13,7 +13,7 @@ class FirstScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Material(
-      color: Theme.of(context).backgroundColor,
+      color: Theme.of(context).colorScheme.background,
       child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           physics: const BouncingScrollPhysics(),
@@ -22,10 +22,11 @@ class FirstScreen extends ConsumerWidget {
 
             Card(
               elevation: 2,
+              shadowColor: Theme.of(context).colorScheme.shadow,
 
               /// Example: Many items have their own colors inside of the ThemData
               /// You can overwrite them in [config/theme.dart].
-              color: Theme.of(context).cardColor,
+              color: Theme.of(context).colorScheme.surface,
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(12))),
               child: SwitchListTile(
@@ -42,7 +43,7 @@ class FirstScreen extends ConsumerWidget {
                 title: Row(
                   children: <Widget>[
                     Icon(Ionicons.text_outline,
-                        color: Theme.of(context).primaryColor),
+                        color: Theme.of(context).colorScheme.primary),
                     const SizedBox(width: 16),
                     Text(
                       tr('language_switch_title'),
@@ -65,6 +66,7 @@ class FirstScreen extends ConsumerWidget {
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8,
                 childAspectRatio: 1.75 / 1,
+                padding: EdgeInsets.zero,
                 children: const <ThemeCard>[
                   ThemeCard(
                     mode: ThemeMode.system,
@@ -82,9 +84,12 @@ class FirstScreen extends ConsumerWidget {
 
             /// Example: Good way to add space between items without using Paddings
             const SizedBox(height: 8),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
-              child: Divider(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Divider(
+                color:
+                    Theme.of(context).colorScheme.onBackground.withOpacity(.4),
+              ),
             ),
             const SizedBox(height: 8),
 
@@ -95,6 +100,7 @@ class FirstScreen extends ConsumerWidget {
               crossAxisSpacing: 8,
               mainAxisSpacing: 8,
               childAspectRatio: 4 / 5.5,
+              padding: EdgeInsets.zero,
               children: const <InfoCard>[
                 /// Example: it is good practice to put widgets in separate files.
                 /// This way the screen files won't become too large and

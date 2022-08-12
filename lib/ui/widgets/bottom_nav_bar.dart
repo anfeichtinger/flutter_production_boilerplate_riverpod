@@ -13,9 +13,10 @@ class BottomNavBar extends ConsumerWidget {
     final int? navIndex = ref.watch(bottomNavProvider) as int?;
 
     return Card(
-      margin: const EdgeInsets.only(top: 2, right: 4, left: 4),
+      margin: const EdgeInsets.only(top: 1, right: 4, left: 4),
       elevation: 4,
-      color: Theme.of(context).bottomAppBarColor,
+      shadowColor: Theme.of(context).colorScheme.shadow,
+      color: Theme.of(context).colorScheme.surfaceVariant,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(16),
@@ -30,7 +31,7 @@ class BottomNavBar extends ConsumerWidget {
         type: BottomNavigationBarType.fixed,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        selectedItemColor: Theme.of(context).primaryColor,
+        selectedItemColor: Theme.of(context).colorScheme.primary,
         unselectedItemColor: Theme.of(context).textTheme.bodyText1!.color,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

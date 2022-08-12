@@ -21,9 +21,10 @@ class InfoCard extends StatelessWidget {
         : Theme.of(context).textTheme;
     return Card(
       elevation: 2,
+      shadowColor: Theme.of(context).colorScheme.shadow,
       color: isPrimaryColor
-          ? Theme.of(context).primaryColor
-          : Theme.of(context).cardColor,
+          ? Theme.of(context).colorScheme.primary
+          : Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12))),
       child: Padding(

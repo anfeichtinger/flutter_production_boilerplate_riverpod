@@ -9,7 +9,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 36),
+      padding: const EdgeInsets.only(left: 2, right: 2, top: 48, bottom: 24),
       child: Text(
         tr(text),
         textAlign: TextAlign.start,

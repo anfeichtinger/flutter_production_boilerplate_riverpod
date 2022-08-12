@@ -19,6 +19,7 @@ class SkeletonScreen extends ConsumerWidget {
     ];
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: const AppBarGone(),
 
       /// When switching between tabs this will fade the old
@@ -28,6 +29,7 @@ class SkeletonScreen extends ConsumerWidget {
           child: pageNavigation.elementAt(navIndex ?? 0)),
 
       bottomNavigationBar: const BottomNavBar(),
+      backgroundColor: Theme.of(context).colorScheme.background,
     );
   }
 }

@@ -15,7 +15,8 @@ class LinkCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
-      color: Theme.of(context).cardColor,
+      shadowColor: Theme.of(context).colorScheme.shadow,
+      color: Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12))),
       child: ListTile(
@@ -26,7 +27,7 @@ class LinkCard extends StatelessWidget {
             color: Theme.of(context).textTheme.bodyText2!.color),
         title: Row(
           children: <Widget>[
-            Icon(icon, color: Theme.of(context).primaryColor),
+            Icon(icon, color: Theme.of(context).colorScheme.primary),
             const SizedBox(width: 16),
             Text(
               tr(title),

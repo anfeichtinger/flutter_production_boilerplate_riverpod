@@ -32,15 +32,38 @@ const MaterialColor textSwatch = MaterialColor(_textColor, <int, Color>{
   900: Color(0xFF0F172A), // slate-900
 });
 
+const Color errorColor = Color(0xFFDC2626); // red-600
+
+final ColorScheme lightColorScheme = ColorScheme.light(
+  primary: primarySwatch.shade500,
+  secondary: primarySwatch.shade500,
+  onSecondary: Colors.white,
+  error: errorColor,
+  background: textSwatch.shade200,
+  onBackground: textSwatch.shade500,
+  onSurface: textSwatch.shade500,
+  surface: textSwatch.shade50,
+  surfaceVariant: Colors.white,
+  shadow: textSwatch.shade900.withOpacity(.1),
+);
+
+final ColorScheme darkColorScheme = ColorScheme.dark(
+  primary: primarySwatch.shade500,
+  secondary: primarySwatch.shade500,
+  onSecondary: Colors.white,
+  error: errorColor,
+  background: const Color(0xFF171724),
+  onBackground: textSwatch.shade400,
+  onSurface: textSwatch.shade300,
+  surface: const Color(0xFF262630),
+  surfaceVariant: const Color(0xFF282832),
+  shadow: textSwatch.shade900.withOpacity(.2),
+);
+
 final ThemeData lightTheme = ThemeData(
-  primarySwatch: primarySwatch,
-  brightness: Brightness.light,
-  scaffoldBackgroundColor: textSwatch.shade100,
-  backgroundColor: textSwatch.shade100,
-  cardColor: Colors.white,
-  bottomAppBarColor: Colors.white,
-  dividerColor: const Color(0x1C000000),
+  colorScheme: lightColorScheme,
   fontFamily: 'Nunito',
+  toggleableActiveColor: primarySwatch.shade500,
   textTheme: TextTheme(
     headline1: TextStyle(
       color: textSwatch.shade700,
@@ -111,12 +134,8 @@ final ThemeData lightTheme = ThemeData(
 );
 
 final ThemeData darkTheme = lightTheme.copyWith(
-  brightness: Brightness.dark,
-  scaffoldBackgroundColor: const Color(0xFF18181B),  // zinc-900
-  backgroundColor: const Color(0xFF18181B),  // zinc-900
-  cardColor: const Color(0xFF262626),  // neutral-800
-  bottomAppBarColor: const Color(0xFF27272A),  // zinc-800
-  dividerColor: const Color(0x1CFFFFFF),
+  colorScheme: darkColorScheme,
+  toggleableActiveColor: primarySwatch.shade500,
   textTheme: TextTheme(
     headline1: TextStyle(
       color: textSwatch.shade200,
