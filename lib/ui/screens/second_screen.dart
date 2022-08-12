@@ -68,7 +68,7 @@ class SecondScreen extends StatelessWidget {
               children: <GridItem>[
                 GridItem(
                   title: 'flutter_riverpod',
-                  icon: Ionicons.water_outline,
+                  icon: Ionicons.leaf_outline,
                   url: Uri.parse(
                       'https://pub.dev/packages/flutter_riverpod/versions/1.0.4'),
                   version: '1.0.4',
@@ -84,8 +84,8 @@ class SecondScreen extends StatelessWidget {
                   title: 'path_provider',
                   icon: Ionicons.extension_puzzle_outline,
                   url: Uri.parse(
-                      'https://pub.dev/packages/path_provider/versions/2.0.10'),
-                  version: '2.0.10',
+                      'https://pub.dev/packages/path_provider/versions/2.0.11'),
+                  version: '2.0.11',
                 ),
                 GridItem(
                   title: 'flutter_displaymode',
@@ -96,7 +96,7 @@ class SecondScreen extends StatelessWidget {
                 ),
                 GridItem(
                   title: 'easy_localization',
-                  icon: Ionicons.text_outline,
+                  icon: Ionicons.language_outline,
                   url: Uri.parse(
                       'https://pub.dev/packages/easy_localization/versions/3.0.1'),
                   version: '3.0.1',
@@ -105,22 +105,22 @@ class SecondScreen extends StatelessWidget {
                   title: 'hive',
                   icon: Ionicons.folder_open_outline,
                   url:
-                      Uri.parse('https://pub.dev/packages/hive/versions/2.2.1'),
-                  version: '2.2.1',
+                      Uri.parse('https://pub.dev/packages/hive/versions/2.2.3'),
+                  version: '2.2.3',
                 ),
                 GridItem(
                   title: 'url_launcher',
                   icon: Ionicons.share_outline,
                   url: Uri.parse(
-                      'https://pub.dev/packages/url_launcher/versions/6.1.2'),
-                  version: '6.1.2',
+                      'https://pub.dev/packages/url_launcher/versions/6.1.5'),
+                  version: '6.1.5',
                 ),
                 GridItem(
                   title: 'ionicons',
                   icon: Ionicons.logo_ionic,
                   url: Uri.parse(
-                      'https://pub.dev/packages/ionicons/versions/0.1.2'),
-                  version: '0.1.2',
+                      'https://pub.dev/packages/ionicons/versions/0.2.1'),
+                  version: '0.2.1',
                 ),
               ],
             ),

@@ -38,8 +38,8 @@ class GridItem extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context)
                   .textTheme
-                  .subtitle1!
-                  .apply(fontWeightDelta: 2),
+                  .titleMedium!
+                  .apply(fontWeightDelta: 2, fontSizeDelta: -2),
             ),
             if (version != null)
               Padding(

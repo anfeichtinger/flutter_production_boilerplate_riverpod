@@ -42,14 +42,14 @@ class FirstScreen extends ConsumerWidget {
                 value: context.locale == const Locale('de'),
                 title: Row(
                   children: <Widget>[
-                    Icon(Ionicons.text_outline,
+                    Icon(Ionicons.language_outline,
                         color: Theme.of(context).colorScheme.primary),
                     const SizedBox(width: 16),
                     Text(
                       tr('language_switch_title'),
                       style: Theme.of(context)
                           .textTheme
-                          .subtitle1!
+                          .titleMedium!
                           .apply(fontWeightDelta: 2),
                     ),
                   ],
@@ -108,7 +108,7 @@ class FirstScreen extends ConsumerWidget {
                 InfoCard(
                     title: 'localization_title',
                     content: 'localization_content',
-                    icon: Ionicons.text_outline,
+                    icon: Ionicons.language_outline,
                     isPrimaryColor: true),
                 InfoCard(
                     title: 'linting_title',
@@ -128,7 +128,7 @@ class FirstScreen extends ConsumerWidget {
                 InfoCard(
                     title: 'state_title',
                     content: 'state_content',
-                    icon: Ionicons.water_outline,
+                    icon: Ionicons.leaf_outline,
                     isPrimaryColor: true),
                 InfoCard(
                     title: 'display_title',

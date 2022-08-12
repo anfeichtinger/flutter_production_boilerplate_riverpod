@@ -24,7 +24,7 @@ class LinkCard extends StatelessWidget {
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(12))),
         trailing: Icon(Ionicons.open_outline,
-            color: Theme.of(context).textTheme.bodyText2!.color),
+            color: Theme.of(context).textTheme.titleMedium!.color),
         title: Row(
           children: <Widget>[
             Icon(icon, color: Theme.of(context).colorScheme.primary),
@@ -33,7 +33,7 @@ class LinkCard extends StatelessWidget {
               tr(title),
               style: Theme.of(context)
                   .textTheme
-                  .subtitle1!
+                  .titleMedium!
                   .apply(fontWeightDelta: 2),
             ),
           ],

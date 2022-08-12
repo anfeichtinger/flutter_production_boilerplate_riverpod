@@ -35,18 +35,18 @@ class InfoCard extends StatelessWidget {
           children: <Widget>[
             Text(
               tr(title),
-              style: textTheme.headline6!.apply(fontWeightDelta: 1),
+              style: textTheme.titleLarge!.apply(fontWeightDelta: 2),
             ),
             const SizedBox(height: 10),
             Text(
               tr(content),
-              style: textTheme.subtitle2,
+              style: textTheme.bodyMedium,
             ),
             const Spacer(),
             Icon(
               icon,
               size: 32,
-              color: textTheme.subtitle2!.color,
+              color: textTheme.bodyMedium!.color,
             ),
           ],
         ),

@@ -32,7 +32,7 @@ class BottomNavBar extends ConsumerWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         selectedItemColor: Theme.of(context).colorScheme.primary,
-        unselectedItemColor: Theme.of(context).textTheme.bodyText1!.color,
+        unselectedItemColor: Theme.of(context).textTheme.bodySmall!.color,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: const Icon(Ionicons.home_outline),
