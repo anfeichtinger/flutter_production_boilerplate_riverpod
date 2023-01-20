@@ -71,7 +71,7 @@ class SecondScreen extends StatelessWidget {
                   icon: Ionicons.leaf_outline,
                   url: Uri.parse(
                       'https://pub.dev/packages/flutter_riverpod/versions/1.0.4'),
-                  version: '1.0.4',
+                  version: '2.1.3',
                 ),
                 GridItem(
                   title: 'lints',
@@ -92,7 +92,7 @@ class SecondScreen extends StatelessWidget {
                   icon: Ionicons.speedometer_outline,
                   url: Uri.parse(
                       'https://pub.dev/packages/flutter_displaymode/versions/0.4.0'),
-                  version: '0.4.0',
+                  version: '0.5.0',
                 ),
                 GridItem(
                   title: 'easy_localization',
@@ -113,14 +113,14 @@ class SecondScreen extends StatelessWidget {
                   icon: Ionicons.share_outline,
                   url: Uri.parse(
                       'https://pub.dev/packages/url_launcher/versions/6.1.5'),
-                  version: '6.1.5',
+                  version: '6.1.7',
                 ),
                 GridItem(
                   title: 'ionicons',
                   icon: Ionicons.logo_ionic,
                   url: Uri.parse(
                       'https://pub.dev/packages/ionicons/versions/0.2.1'),
-                  version: '0.2.1',
+                  version: '0.2.2',
                 ),
               ],
             ),
