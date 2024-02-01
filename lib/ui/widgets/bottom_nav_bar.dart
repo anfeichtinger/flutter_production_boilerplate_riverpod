@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ionicons/ionicons.dart';
 
 import '../../states/widgets/bottom_nav_bar/bottom_nav_bar_state.dart';
 
@@ -35,11 +35,11 @@ class BottomNavBar extends ConsumerWidget {
         unselectedItemColor: Theme.of(context).textTheme.bodySmall!.color,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: const Icon(Ionicons.home_outline),
+            icon: const Icon(FluentIcons.home_24_regular),
             label: tr('bottom_nav_first'),
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Ionicons.information_circle_outline),
+            icon: const Icon(FluentIcons.info_24_regular),
             label: tr('bottom_nav_second'),
           ),
         ],

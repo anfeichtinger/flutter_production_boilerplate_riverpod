@@ -41,16 +41,16 @@ flutter run lib/main.dart
 
 This repository makes use of the following pub packages:
 
-| Package                                                             | Version | Usage                              |
-|---------------------------------------------------------------------|---------|------------------------------------|
-| [Flutter Riverpod](https://pub.dev/packages/flutter_riverpod)       | ^2.1.3  | State management*                  |
-| [Flutter Lints](https://pub.dev/packages/flutter_lints)             | ^2.0.1  | Stricter linting rules             |
-| [Path Provider](https://pub.dev/packages/path_provider)             | ^2.0.11 | Get the save path for Hive         |
-| [Flutter Displaymode](https://pub.dev/packages/flutter_displaymode) | ^0.5.0  | Support high refresh rate displays |
-| [Easy Localization](https://pub.dev/packages/easy_localization)     | ^3.0.1  | Makes localization easy            |
-| [Hive](https://pub.dev/packages/hive)                               | ^2.2.3  | Platform independent storage.      |
-| [Url Launcher](https://pub.dev/packages/url_launcher)               | ^6.1.7  | Open urls in Browser               |
-| [Ionicons](https://pub.dev/packages/ionicons)                       | ^0.2.2  | Modern icon library                |
+| Package                                                             | Version | Usage                                |
+|---------------------------------------------------------------------|---------|--------------------------------------|
+| [Flutter Riverpod](https://pub.dev/packages/flutter_riverpod)       | ^2.4.9  | State management*                    |
+| [Flutter Lints](https://pub.dev/packages/flutter_lints)             | ^3.0.1  | Stricter linting rules               |
+| [Path Provider](https://pub.dev/packages/path_provider)             | ^2.1.2  | Get the save path for Hive           |
+| [Flutter Displaymode](https://pub.dev/packages/flutter_displaymode) | ^0.6.0  | Support high refresh rate displays   |
+| [Easy Localization](https://pub.dev/packages/easy_localization)     | ^3.0.3  | Makes localization easy              |
+| [Hive](https://pub.dev/packages/hive)                               | ^2.2.3  | Platform independent storage.        |
+| [Url Launcher](https://pub.dev/packages/url_launcher)               | ^6.2.4  | Open urls in Browser                 |
+| [FluentUI Icons](https://pub.dev/packages/fluentui_system_icons)    | ^0.2.2  | Microsoft's open source icon library |
 
 > \* Recommended to keep regardless of your project
 
@@ -138,13 +138,13 @@ following code:
 
 | Home Light                                                                     | Info Light                                                                     |
 |--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| ![Home Light](./assets/img/home_light.jpg "The home page with a light theme.") | ![Info Light](./assets/img/info_light.jpg "The info page with a light theme.") |
+| ![Home Light](./assets/img/home_light.png "The home page with a light theme.") | ![Info Light](./assets/img/info_light.png "The info page with a light theme.") |
 
 #### Dark Theme
 
 | Home Dark German                                                            | Info Dark German                                                            |
 |-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| ![Home Dark](./assets/img/home_dark.jpg "The home page with a dark theme.") | ![Info Dark](./assets/img/info_dark.jpg "The info page with a dark theme.") |
+| ![Home Dark](./assets/img/home_dark.png "The home page with a dark theme.") | ![Info Dark](./assets/img/info_dark.png "The info page with a dark theme.") |
 
 ## License
 

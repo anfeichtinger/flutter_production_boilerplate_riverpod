@@ -8,7 +8,7 @@
   "localization_content": "Simplified translations with the Easy Translations package.",
 
   "linting_title": "Linting",
-  "linting_content": "Stricter linting rules with flutter_lints. Recommended by the Dart team.",
+  "linting_content": "Stricter linting rules with flutter lints recommended by the Dart team.",
 
   "storage_title": "Storage",
   "storage_content": "Blazing fast key-value database written in pure Dart with Hive.",
@@ -17,10 +17,10 @@
   "dark_mode_content": "Smooth transition to dark mode by using the inbuilt theming engine.",
 
   "state_title": "State",
-  "state_content": "Powerful state management using Riverpod.",
+  "state_content": "Powerful state management using Cubit & BLOC.",
 
   "display_title": "Display",
-  "display_content": "Support for high refresh rate displays with the flutter_displaymode package.",
+  "display_content": "Support for high refresh rate displays with flutter displaymode.",
 
   "language_switch_title": "Use german",
 
@@ -34,11 +34,12 @@
   "packages_divider_title": "Packages",
 
   "flutter_riverpod": "Riverpod",
+  "equatable": "Equatable",
   "lints": "Flutter Lints",
   "path_provider": "Path provider",
   "flutter_displaymode": "Displaymode",
   "easy_localization": "Easy localization",
   "hive": "Hive",
   "url_launcher": "Url launcher",
-  "ionicons": "Ionicons"
+  "fluentui_system_icons": "FluentUI Icons"
 }
