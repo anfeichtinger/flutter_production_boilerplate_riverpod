@@ -29,7 +29,7 @@ class SkeletonScreen extends ConsumerWidget {
           child: pageNavigation.elementAt(navIndex ?? 0)),
 
       bottomNavigationBar: const BottomNavBar(),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
     );
   }
 }

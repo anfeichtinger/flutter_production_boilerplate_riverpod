@@ -1,5 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../widgets/header.dart';
 import '../widgets/second_screen/grid_item.dart';
@@ -12,7 +13,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           physics: const BouncingScrollPhysics(),
@@ -24,14 +25,20 @@ class SecondScreen extends StatelessWidget {
                 url: Uri.parse(
                     'https://github.com/anfeichtinger/flutter_production_boilerplate_riverpod')),
             const TextDivider(text: 'author_divider_title'),
-            GridView.count(
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              childAspectRatio: 2 / 1.15,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 8,
-              shrinkWrap: true,
-              padding: EdgeInsets.zero,
+            Center(
+              child: Text(
+                'Andreas Feichtinger',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .apply(fontWeightDelta: 2),
+              ),
+            ),
+            const SizedBox(height: 8),
+            StaggeredGrid.count(
+              crossAxisCount: 3,
+              crossAxisSpacing: 0,
+              mainAxisSpacing: 0,
               children: <GridItem>[
                 GridItem(
                   title: 'instagram_card_title',
@@ -39,13 +46,9 @@ class SecondScreen extends StatelessWidget {
                   url: Uri.parse('https://www.instagram.com/anfeichtinger'),
                 ),
                 GridItem(
-                  title: 'twitter_card_title',
-                  icon: FluentIcons.airplane_take_off_24_regular,
-                  url: Uri.parse('https://twitter.com/_pharrax'),
-                ),
-                GridItem(
                   title: 'donate_card_title',
-                  icon: FluentIcons.heart_24_regular,
+                  icon: FluentIcons.heart_24_filled,
+                  iconColor: Theme.of(context).colorScheme.tertiary,
                   url: Uri.parse(
                       'https://www.paypal.com/donate?hosted_button_id=EE3W7PS6AHEP8&source=url'),
                 ),
@@ -57,35 +60,24 @@ class SecondScreen extends StatelessWidget {
               ],
             ),
             const TextDivider(text: 'packages_divider_title'),
-            GridView.count(
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              childAspectRatio: 2 / 1.15,
+            StaggeredGrid.count(
+              crossAxisCount: MediaQuery.of(context).size.width > 768 ? 3 : 2,
               crossAxisSpacing: 8,
               mainAxisSpacing: 8,
-              shrinkWrap: true,
-              padding: EdgeInsets.zero,
               children: <GridItem>[
                 GridItem(
                   title: 'flutter_riverpod',
                   icon: FluentIcons.leaf_one_24_regular,
                   url: Uri.parse(
-                      'https://pub.dev/packages/flutter_riverpod/versions/2.4.9'),
-                  version: '2.4.9',
-                ),
-                GridItem(
-                  title: 'lints',
-                  icon: FluentIcons.ruler_24_regular,
-                  url: Uri.parse(
-                      'https://pub.dev/packages/flutter_lints/versions/3.0.1'),
-                  version: '3.0.1',
+                      'https://pub.dev/packages/flutter_riverpod/versions/2.5.1'),
+                  version: '2.5.1',
                 ),
                 GridItem(
                   title: 'path_provider',
                   icon: FluentIcons.puzzle_piece_24_regular,
                   url: Uri.parse(
-                      'https://pub.dev/packages/path_provider/versions/2.1.2'),
-                  version: '2.1.2',
+                      'https://pub.dev/packages/path_provider/versions/2.1.4'),
+                  version: '2.1.4',
                 ),
                 GridItem(
                   title: 'flutter_displaymode',
@@ -98,8 +90,8 @@ class SecondScreen extends StatelessWidget {
                   title: 'easy_localization',
                   icon: FluentIcons.local_language_24_regular,
                   url: Uri.parse(
-                      'https://pub.dev/packages/easy_localization/versions/3.0.3'),
-                  version: '3.0.3',
+                      'https://pub.dev/packages/easy_localization/versions/3.0.7'),
+                  version: '3.0.7',
                 ),
                 GridItem(
                   title: 'hive',
@@ -109,18 +101,39 @@ class SecondScreen extends StatelessWidget {
                   version: '2.2.3',
                 ),
                 GridItem(
+                  title: 'hive_flutter',
+                  icon: FluentIcons.leaf_two_24_regular,
+                  url: Uri.parse(
+                      'https://pub.dev/packages/hive_flutter/versions/1.1.0'),
+                  version: '1.1.0',
+                ),
+                GridItem(
+                  title: 'lints',
+                  icon: FluentIcons.code_24_regular,
+                  url: Uri.parse(
+                      'https://pub.dev/packages/flutter_lints/versions/4.0.0'),
+                  version: '4.0.0',
+                ),
+                GridItem(
                   title: 'url_launcher',
                   icon: FluentIcons.share_24_regular,
                   url: Uri.parse(
-                      'https://pub.dev/packages/url_launcher/versions/6.2.4'),
-                  version: '6.2.4',
+                      'https://pub.dev/packages/url_launcher/versions/6.3.0'),
+                  version: '6.3.0',
                 ),
                 GridItem(
                   title: 'fluentui_system_icons',
                   icon: FluentIcons.icons_24_regular,
                   url: Uri.parse(
-                      'https://pub.dev/packages/fluentui_system_icons/versions/1.1.225'),
-                  version: '1.1.225',
+                      'https://pub.dev/packages/fluentui_system_icons/versions/1.1.255'),
+                  version: '1.1.255',
+                ),
+                GridItem(
+                  title: 'flutter_staggered_grid_view',
+                  icon: FluentIcons.grid_28_regular,
+                  url: Uri.parse(
+                      'https://pub.dev/packages/flutter_staggered_grid_view/versions/0.7.0'),
+                  version: '0.7.0',
                 ),
               ],
             ),
