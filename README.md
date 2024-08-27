@@ -1,5 +1,7 @@
 # Flutter Production Boilerplate Riverpod
 
+*Note: If you prefer to use BLOC instead of Riverpod you can use [flutter_production_boilerplate_riverpod](https://github.com/anfeichtinger/flutter_production_boilerplate)*
+
 ## A flutter project containing riverpod, flutter_lints, hive, easy_translations and more!
 
 This repository is the starting point for my personal projects. If you have any suggestions or

@@ -20,10 +20,11 @@ class SecondScreen extends StatelessWidget {
           children: <Widget>[
             const Header(text: 'bottom_nav_second'),
             LinkCard(
-                title: 'github_card_title',
-                icon: FluentIcons.diversity_24_regular,
-                url: Uri.parse(
-                    'https://github.com/anfeichtinger/flutter_production_boilerplate_riverpod')),
+              title: 'github_card_title',
+              icon: FluentIcons.diversity_24_regular,
+              url: Uri.parse(
+                  'https://github.com/anfeichtinger/flutter_production_boilerplate_riverpod'),
+            ),
             const TextDivider(text: 'author_divider_title'),
             Center(
               child: Text(

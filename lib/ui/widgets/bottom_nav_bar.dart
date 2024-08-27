@@ -20,14 +20,15 @@ class BottomNavBar extends ConsumerWidget {
       color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
-          borderRadius: const BorderRadius.only(
-            topLeft: Style.radiusLg,
-            topRight: Style.radiusLg,
-          ),
-          side: BorderSide(
-            color: Theme.of(context).shadowColor,
-            strokeAlign: BorderSide.strokeAlignInside,
-          )),
+        borderRadius: const BorderRadius.only(
+          topLeft: Style.radiusLg,
+          topRight: Style.radiusLg,
+        ),
+        side: BorderSide(
+          color: Theme.of(context).shadowColor,
+          strokeAlign: BorderSide.strokeAlignInside,
+        ),
+      ),
       child: BottomNavigationBar(
         currentIndex: navIndex ?? 0,
         onTap: (int index) {

@@ -25,8 +25,9 @@ class SkeletonScreen extends ConsumerWidget {
       /// When switching between tabs this will fade the old
       /// layout out and the new layout in.
       body: AnimatedSwitcher(
-          duration: const Duration(milliseconds: 300),
-          child: pageNavigation.elementAt(navIndex ?? 0)),
+        duration: const Duration(milliseconds: 300),
+        child: pageNavigation.elementAt(navIndex ?? 0),
+      ),
 
       bottomNavigationBar: const BottomNavBar(),
       backgroundColor: Theme.of(context).colorScheme.surface,

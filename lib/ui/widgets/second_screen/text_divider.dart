@@ -10,25 +10,27 @@ class TextDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 24, top: 16, right: 24, bottom: 16),
-      child: Row(children: <Widget>[
-        Expanded(
-          child: Divider(
-            color: Theme.of(context).dividerColor,
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Divider(
+              color: Theme.of(context).dividerColor,
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: Text(
-            tr(text),
-            style: Theme.of(context).textTheme.bodyMedium,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Text(
+              tr(text),
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           ),
-        ),
-        Expanded(
-          child: Divider(
-            color: Theme.of(context).dividerColor,
+          Expanded(
+            child: Divider(
+              color: Theme.of(context).dividerColor,
+            ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 }

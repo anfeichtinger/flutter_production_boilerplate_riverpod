@@ -22,7 +22,6 @@
   "author_divider_title": "Created by",
   "packages_divider_title": "Packages",
   "flutter_riverpod": "Riverpod",
-  "equatable": "Equatable",
   "lints": "Flutter Lints",
   "path_provider": "Path provider",
   "flutter_displaymode": "Displaymode",

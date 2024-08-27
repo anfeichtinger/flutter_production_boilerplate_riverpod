@@ -20,14 +20,18 @@ class LinkCard extends StatelessWidget {
       shadowColor: Theme.of(context).colorScheme.shadow,
       color: Theme.of(context).colorScheme.surfaceContainer,
       shape: RoundedRectangleBorder(
-          borderRadius: const BorderRadius.all(Style.radiusMd),
-          side: BorderSide(color: Theme.of(context).shadowColor)),
+        borderRadius: const BorderRadius.all(Style.radiusMd),
+        side: BorderSide(color: Theme.of(context).shadowColor),
+      ),
       child: ListTile(
         onTap: _launchUrl,
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Style.radiusMd)),
-        trailing: Icon(FluentIcons.open_24_regular,
-            color: Theme.of(context).textTheme.titleMedium!.color),
+          borderRadius: BorderRadius.all(Style.radiusMd),
+        ),
+        trailing: Icon(
+          FluentIcons.open_24_regular,
+          color: Theme.of(context).textTheme.titleMedium!.color,
+        ),
         title: FittedBox(
           alignment: Alignment.centerLeft,
           fit: BoxFit.scaleDown,

@@ -26,12 +26,14 @@ class GridItem extends StatelessWidget {
       shadowColor: Theme.of(context).colorScheme.shadow,
       color: Theme.of(context).colorScheme.surfaceContainer,
       shape: RoundedRectangleBorder(
-          borderRadius: const BorderRadius.all(Style.radiusMd),
-          side: BorderSide(color: Theme.of(context).shadowColor)),
+        borderRadius: const BorderRadius.all(Style.radiusMd),
+        side: BorderSide(color: Theme.of(context).shadowColor),
+      ),
       child: ListTile(
         onTap: _launchUrl,
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Style.radiusMd)),
+          borderRadius: BorderRadius.all(Style.radiusMd),
+        ),
         contentPadding: const EdgeInsets.all(0),
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
