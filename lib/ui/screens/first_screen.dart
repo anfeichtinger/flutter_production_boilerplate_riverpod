@@ -3,9 +3,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_production_boilerplate_riverpod/config/style.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../widgets/first_screen/info_card.dart';
 import '../widgets/first_screen/theme_card.dart';
 import '../widgets/header.dart';
 
@@ -54,7 +52,7 @@ class FirstScreen extends ConsumerWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         physics: const BouncingScrollPhysics(),
         children: <Widget>[
-          const Header(text: 'app_name'),
+          const Header(text: 'Settings'),
 
           Card(
             elevation: 0,
@@ -73,14 +71,16 @@ class FirstScreen extends ConsumerWidget {
                 /// The initial locale is automatically determined by the library.
                 /// Changing the locale like this will persist the selected locale.
                 context.setLocale(
-                    newValue ? const Locale('de') : const Locale('en'));
+                  newValue ? const Locale('de') : const Locale('en'),
+                );
               },
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Style.radiusMd),
               ),
               value: context.locale == const Locale('de'),
-              inactiveTrackColor:
-                  Theme.of(context).colorScheme.surfaceContainer,
+              inactiveTrackColor: Theme.of(context)
+                  .colorScheme
+                  .surfaceContainer,
 
               /// You can use a FittedBox to keep Text in its bounds.
               title: FittedBox(
@@ -96,9 +96,7 @@ class FirstScreen extends ConsumerWidget {
                     const SizedBox(width: 16),
                     Text(
                       tr('language_switch_title'),
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium!
+                      style: Theme.of(context).textTheme.titleMedium!
                           .apply(fontWeightDelta: 2),
                     ),
                   ],
@@ -130,36 +128,7 @@ class FirstScreen extends ConsumerWidget {
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-            child: Divider(
-              color: Theme.of(context).dividerColor,
-            ),
-          ),
-
-          /// If no complex grids are required remove the flutter_staggered_grid_view package
-          MasonryGridView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: infoCards.length,
-            padding: const EdgeInsets.all(0),
-
-            /// Example: Adjust based on screen size
-            gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: MediaQuery.of(context).size.width > 768 ? 3 : 2,
-            ),
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
-            itemBuilder: (BuildContext context, int index) =>
-
-                /// Example: it is good practice to put widgets in separate files.
-                /// This way the screen files won't become too large and
-                /// the code becomes more clear.
-                InfoCard(
-                    title: infoCards[index]['title'] as String,
-                    content: infoCards[index]['content'] as String,
-                    icon: infoCards[index]['icon'] as IconData,
-                    isPrimaryColor: MediaQuery.of(context).size.width > 768
-                        ? index.isEven
-                        : infoCardShouldBePrimary(index)),
+            child: Divider(color: Theme.of(context).dividerColor),
           ),
 
           const SizedBox(height: 36),

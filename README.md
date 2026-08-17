@@ -3,6 +3,8 @@
 *Note: If you prefer to use BLOC instead of Riverpod you can
 use [flutter_production_boilerplate_riverpod](https://github.com/reafeichtinger/flutter_production_boilerplate)*
 
+*Note: If you prefer to use GetX instead of BLOC you can use [flutter_production_boilerplate_getx](https://github.com/reafeichtinger/flutter_production_boilerplate_getx)*
+
 ## A flutter project containing riverpod, flutter_lints, hive, easy_translations and more!
 
 This repository is the starting point for my personal projects. If you have any suggestions or
